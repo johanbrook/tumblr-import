@@ -4,6 +4,10 @@ Simple script I'm using to fetch my Tumblr *text posts* and save to file.
 
 Markdown formatted posts will be saved with an `.md` extension, otherwise `.txt`.
 
+## Dependencies
+
+Except for [Node.js](http://nodejs.org/) and [CoffeeScript](coffeescript.org), there are no external dependenices.
+
 ## Usage
 
 ### From the command line
