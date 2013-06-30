@@ -6,6 +6,14 @@ Markdown formatted posts will be saved with an `.md` extension, otherwise `.txt`
 
 ## Usage
 
+**Important:** In order run the script, a `config.json` file must exists in the same directory as `tumblr.coffee`, and include the following:
+
+	{
+		"api_key": "<api key from tumblr>"
+	}
+
+In order to obtain an API key, just register an application here: http://www.tumblr.com/oauth/apps. Don't worry: no weird OAuth stuff has to be done.
+
 ### From the command line:
 
 	coffee tumblr.coffee <Tumblr URL> [path]
