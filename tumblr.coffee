@@ -8,7 +8,7 @@ class Tumblr
 	constructor: (blog_name, api_key) ->
 		@api_url = this._build_url(blog_name, api_key)
 
-	fetch_posts: (options, callback) ->
+	save_posts: (options, callback) ->
 		settings = 
 			limit: options?.limit or 20
 			path: options?.path or "./"
@@ -114,7 +114,7 @@ fs.exists "config.json", (exists) ->
 
 run_import = (blog_url, api_key, directory) ->
 	client = new Tumblr(blog_url, api_key)
-	client.fetch_posts path: directory, (error, blog) ->
+	client.save_posts path: directory, (error, blog) ->
 		unless error
 			console.log "#{count} posts from #{blog_url} saved to #{directory}!"
 		else
