@@ -6,6 +6,12 @@ Markdown formatted posts will be saved with an `.md` extension, otherwise `.txt`
 
 ## Usage
 
+### From the command line
+
+	coffee tumblr.coffee <Tumblr URL> [path]
+
+where <Tumblr URL> is mandatory and can be `something.tumblr.com` or a custom domain name, such as `log.johanbrook.com`. `path` is where all posts will be saved, and is optional, and defaults to the current directory. If specified, it can be relative or absolute.
+
 **Important:** In order run the script, a `config.json` file must exists in the same directory as `tumblr.coffee`, and include the following:
 
 	{
@@ -14,18 +20,16 @@ Markdown formatted posts will be saved with an `.md` extension, otherwise `.txt`
 
 In order to obtain an API key, just register an application here: http://www.tumblr.com/oauth/apps. Don't worry: no weird OAuth stuff has to be done.
 
-### From the command line:
-
-	coffee tumblr.coffee <Tumblr URL> [path]
-
-where <Tumblr URL> is mandatory and can be `something.tumblr.com` or a custom domain name, such as `log.johanbrook.com`. `path` is where all posts will be saved, and is optional, and defaults to the current directory. If specified, it can be relative or absolute.
-
 ### In code
 
 	client = new Tumblr(blog_url, api_key)
 	# path defaults to current directory
 	# limit defaults to 20
-	client.fetch_posts(path: <directory>, limit: <limit>)
+	client.save_posts path: "./posts", limit: 15, (error, blog) ->
+		# error can be null or an error thrown
+		# On success, blog will be an object with this info: http://www.tumblr.com/docs/en/api/v2#blog-info
+		unless error
+			console.log "Saved posts from #{blog.title}!"
 
 ## Left to do
 
