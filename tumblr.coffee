@@ -81,7 +81,7 @@ class Tumblr
 				callback(response.statusCode, json)
 
 		request.on "error", (error) ->
-			console.error "Something wen't wrong fetching from #{url}"
+			console.error "Something went wrong fetching from #{url}"
 			console.log error.message
 
 
