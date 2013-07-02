@@ -37,7 +37,9 @@ In order to obtain an API key, just register an application here: http://www.tum
 
 ## Left to do
 
-- Create a workaround for Tumblr's limit on twenty posts for every fetch.
+- Create a workaround for Tumblr's limit on max twenty posts for every fetch.
+- Only fetch new posts since last fetch, if possible.
+- Add metadata to top of saved file, like YAML Front matter with date, etc.
 
 ## License
 
